@@ -133,7 +133,7 @@ app.get("/lyrics4", async (req, res) => {
   }
 })
 
-app.listen(PORT, err => {
+app.listen(process.env.PORT, err => {
   if (err) console.log(err)
-  console.log("listening on port", PORT)
+  console.log("listening on port", process.env.PORT)
 })
