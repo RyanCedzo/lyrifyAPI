@@ -19,7 +19,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 app.post("/login", async (req, res) => {
   const { code } = req.body
@@ -133,7 +133,7 @@ app.get("/lyrics4", async (req, res) => {
   }
 })
 
-app.listen(process.env.PORT, err => {
+app.listen(PORT, err => {
   if (err) console.log(err)
-  console.log("listening on port", process.env.PORT)
+  console.log("listening on port", PORT)
 })
